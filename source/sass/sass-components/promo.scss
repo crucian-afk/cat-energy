@@ -1,0 +1,150 @@
+.promo {
+  position: relative;
+  background-image: linear-gradient(to bottom, transparentize($green, 0.15) 63%, #ffffff 63%);
+  margin-top: 3px;
+
+  &::before {
+    background-image: url("../img/index-background-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+    height: 63%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.promo__wrapper {
+  padding-top: 22px;
+  color: $white;
+}
+
+.promo__title {
+  color: $white;
+  font-size: 36px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 21px;
+  line-height: 1em;
+}
+
+.promo__slogan {
+  color: $white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.promo__title,
+.promo__slogan {
+  text-align: center;
+}
+
+.promo__link {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.promo__photo {
+  margin-top: 10px;
+}
+
+@media (min-width: $tablet-width) {
+  .promo {
+    background-image: none;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .promo__wrapper {
+    position: relative;
+    padding-top: 19px;
+  }
+
+  .promo__title {
+    font-size: 60px;
+    line-height: 60px;
+    max-width: 415px;
+    margin: 13px 86px 36px;
+    color: $black;
+    text-align: left;
+  }
+
+  .promo__slogan {
+    color: $black;
+    text-align: left;
+    margin-left: 90px;
+    font-size: 20px;
+  }
+
+  .promo__photo {
+    width: 706px;
+    height: auto;
+    margin-top: -6px;
+  }
+
+  .promo__link {
+    position: absolute;
+    top: 261px;
+    left: 120px;
+    line-height: 34px;
+    font-size: 20px;
+    max-width: 245px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .promo {
+    min-height: 552px;
+
+    &::before {
+      display: block;
+      background-image: url("../img/index-background-3.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 99%;
+      content: "";
+      height: 126%;
+      width: 50%;
+      position: absolute;
+      top: -41%;
+      left: calc(1vw + 49%);
+      z-index: -1;
+    }
+  }
+
+  .promo__title {
+    margin-top: 224px;
+    margin-left: 80px;
+  }
+
+  .promo__slogan {
+    margin-left: 80px;
+    font-size: 20px;
+  }
+
+  .promo__photo {
+    position: absolute;
+    width: 551px;
+    height: auto;
+    top: -77px;
+    right: 220px;
+  }
+
+  .promo__link {
+    top: 232px;
+    left: 80px;
+  }
+}
+
+@media (min-width: $desktop-width) and (min-resolution: 2dppx) {
+  .promo::before {
+    background-image: url("../img/index-background-3@2x.jpg");
+  }
+}

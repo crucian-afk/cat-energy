@@ -1,0 +1,21 @@
+each product in PRODUCTS
+  article.product.container
+    div._wrapper
+      a(href="" tabindex=-1)._image-wrapper
+        picture
+          source(media="(min-width: 1440px)" srcset=`/img/product_${product.type}_${product.weight}g_${product.taste}-large.png, /img/product_${product.type}_${product.weight}g_${product.taste}-large@2x.png 2x`)
+          source(media="(min-width: 768px)" srcset=`/img/product_${product.type}_${product.weight}g_${product.taste}-medium.png, /img/product_${product.type}_${product.weight}g_${product.taste}-medium@2x.png 2x`)
+          img(class=`product__image--${product.weight}g` src=`/img/product_${product.type}_${product.weight}g_${product.taste}.png` srcset=`/img/product_${product.type}_${product.weight}g_${product.taste}@2x.png` width="68" height="86" alt=`${TastesDictionary[product.taste]} ${product.weight} грамм`)._image
+      div._info
+        a(href="")._link.link
+          h2._title Cat energy #{product.type} #{product.weight} г
+        dl._specs
+          dt Масса
+          dd #{product.weight} г
+        dl._specs
+          dt Вкус
+          dd #{TastesDictionary[product.taste]}
+        dl._specs
+          dt Цена
+          dd #{product.price} Р.
+    button(type="button").button Заказать

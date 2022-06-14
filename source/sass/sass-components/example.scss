@@ -1,0 +1,97 @@
+.example {
+  text-align: center;
+  margin-top: 17px;
+  overflow: hidden;
+  grid-area: result;
+}
+
+.example__wrapper {
+  display: flex;
+  align-items: center;
+  width: 200%;
+}
+
+.example--after .example__wrapper,
+.example--after .example__progress-toggle {
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+.example .example__wrapper,
+.example .example__progress-toggle {
+  transition: 0.3s;
+}
+
+.example__photo {
+  width: 100%;
+  height: 240px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+}
+
+.example__photo--after {
+  background-image: url("../img/cat-skinny-large.png");
+}
+
+.example__photo--before {
+  background-image: url("../img/cat-fat-large.png");
+}
+
+@media (min-width: $tablet-width) {
+  .example--after .example__wrapper {
+    transform: none;
+  }
+
+  .example {
+    margin-top: 69px;
+  }
+
+  .example__wrapper {
+    position: relative;
+    width: 610px;
+    height: 510px;
+    margin: 0 auto;
+  }
+
+  .example__photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+  }
+
+  .example__photo--before {
+    background-position: 7px -8px;
+  }
+
+  .example__photo--after {
+    direction: rtl;
+    left: auto;
+    right: 0;
+    background-position-x: -238px;
+  }
+
+  .example--after .example__progress-toggle {
+    transform: translateX(-50%);
+    margin-top: -26px;
+  }
+
+  .example .example__progress-toggle {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .example {
+    min-width: 783px;
+    margin-top: 0;
+    overflow: initial;
+  }
+
+  .example__wrapper {
+    left: 96px;
+    top: -19px;
+  }
+}

@@ -1,0 +1,149 @@
+.description {
+  padding-bottom: 44px;
+}
+
+.description__title {
+  font-size: 36px;
+  font-weight: 400;
+  margin-top: 11px;
+  margin-bottom: 25px;
+}
+
+.description__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.description__text {
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.description__item {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  margin-bottom: 4px;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    min-width: 60px;
+    height: 60px;
+    background-color: $green;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    align-self: center;
+  }
+
+  &--leaf::before {
+    background-image: url("../img/desc-icon_leaf.svg");
+  }
+
+  &--tub::before {
+    background-image: url("../img/desc-icon_tub.svg");
+  }
+
+  &--eat::before {
+    background-image: url("../img/desc-icon_eat.svg");
+  }
+
+  &--alarm::before {
+    background-image: url("../img/desc-icon_alarm.svg");
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .description {
+    border-bottom: 1px solid $grey-bg;
+    padding-bottom: 0;
+  }
+
+  .description__title {
+    font-size: 60px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .description__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 56px;
+    justify-content: space-between;
+  }
+
+  .description__item {
+    outline-offset: 5px;
+    max-width: 250px;
+    min-height: 280px;
+    flex-direction: column;
+    position: relative;
+    counter-increment: tab;
+    margin-right: 20px;
+    margin-top: 36px;
+
+    &::before {
+      min-width: 80px;
+      height: 80px;
+      align-self: flex-start;
+    }
+
+    &::after {
+      content: counter(tab);
+      font-family: "Oswald", sans-serif;
+      font-size: 280px;
+      color: $smoke-white;
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      bottom: -27px;
+    }
+
+    &--leaf::after {
+      right: 20px;
+    }
+  }
+
+  .description__text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 0;
+    margin-top: 31px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .description__title {
+    margin-left: 0;
+    margin-top: 58px;
+  }
+
+  .description__list {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: space-between;
+    counter-reset: tab;
+  }
+
+  .description__item {
+    max-width: 230px;
+    margin-right: 15px;
+
+    &::after {
+      right: -18px;
+    }
+
+    &--leaf::after {
+      right: 0;
+    }
+
+    &--alarm {
+      max-width: 245px;
+      margin-right: 0;
+    }
+
+    &--alarm::after {
+      right: -3px;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+section.form
+  h1._title.container Подбор программы
+  form(
+    action="https://echo.htmlacademy.ru/"
+    method="POST"
+  ).request-form
+    fieldset._fieldset.-data.container
+      legend._title Заполните анкету, и мы подберем программу питания для вашего кота
+      label._label
+        span Имя:*
+        input(
+          type="text"
+          id="name"
+          name="cat-name"
+          required=true
+        )._input.request-form__text-input
+      label._label
+        span Вес (кг):*
+        input(
+          type="text"
+          id="weight"
+          name="cat-weight"
+          required=true
+        )._input.request-form__text-input
+      label._label
+        span Возраст (лет):
+        input(
+          type="number"
+          id="age"
+          name="cat-age"
+        )._input.request-form__text-input
+
+    fieldset._fieldset.-type.container
+      legend._legend.visually-hidden Выберите тип программы питания
+      label._label
+        input(
+          type="radio"
+          id="slimming"
+          name="program"
+          checked=true
+        )._radio-input
+        span._name.-radio Похудение
+      label._label
+        input(
+          type="radio"
+          id="weight-gain"
+          name="program"
+        )._radio-input
+        span._name.-radio Набор массы
+      label._label
+        input(
+          type="radio"
+          id="need-advice"
+          name="program"
+        )._radio-input
+        span._name.-radio Не знаю (Нужен ваш совет)
+
+    fieldset._fieldset.-contacts.container
+      legend._legend.-contacts Контактные данные (владельца кота)
+      label._label
+        span E-mail:*
+        input(
+          type="email"
+          name="owner-contacts"
+          id="email"
+          required=true
+        )._input.-email.request-form__text-input
+      label._label
+        span Телефон:*
+        input(
+          type="tel"
+          name="owner-contacts"
+          id="phone"
+          required=true
+        )._input.-phone.request-form__text-input
+    fieldset._fieldset.-comment.container
+      legend._legend.-comments Комментарий
+      textarea(
+        name="about-cat"
+        id="comment"
+        rows="5"
+        placeholder="Расскажите обо всех повадках кота"
+      )._input.request-form__text-input.request-form__text-area
+
+    fieldset._fieldset.-additional.container.form-additional
+      legend._legend.-add Дополнительно
+      div._checkboxes
+        label._label
+          input(
+            type="checkbox"
+            name="sweetener"
+            id="sweetener"
+            checked=true
+          )._checkbox
+          span._name Сахарозаменитель
+        label._label
+          input(
+            type="checkbox"
+            name="water"
+            id="water"
+          )._checkbox
+          span._name Питьевая вода
+        label._label
+          input(
+            type="checkbox"
+            name="milk"
+            id="milk"
+          )._checkbox
+          span._name Молоко
+        label._label
+          input(
+            type="checkbox"
+            name="vitamins"
+            id="vitamins"
+          )._checkbox
+          span._name Витамины
+      button(type="submit").button Отправить заявку
+      p.required-mark * – Обязательные поля

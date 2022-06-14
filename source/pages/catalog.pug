@@ -1,0 +1,21 @@
+extends common/base
+
+block variables
+  -location = "catalog.html"
+  -const PRODUCTS = [{ type: 'pro', weight: 500, taste: 'chicken', price: 700 }, { type: 'pro', weight: 1000, taste: 'chicken', price: 1000 }, { type: 'pro', weight: 500, taste: 'fish', price: 700 }, { type: 'pro', weight: 1000, taste: 'fish', price: 1000 }, { type: 'slim', weight: 500, taste: 'buckwheat', price: 400 }, { type: 'slim', weight: 1000, taste: 'buckwheat', price: 700 }, { type: 'slim', weight: 500, taste: 'rice', price: 500 } ]
+  -title = "Каталог товаров"
+  -const ADDITIONALS = [{ name: 'Сахарозаменитель', volume: '1 упаковка', weight: '100 г', price: '200 Р.' }, { name: 'Питьевая вода', volume: '5 литров', price: '50 Р.' }, { name: 'Молоко', volume: '1 литр', price: '100 Р.' }, { name: 'Витамины', volume: '1 упаковка', weight: '30 г', price: '300 Р.' }]
+  -const TastesDictionary = {'chicken': 'Курица', 'fish': 'Рыба', 'buckwheat': 'Гречка', 'rice': 'Рис'}
+
+block content
+  include includes/header
+  main
+    section.catalog
+      h1._title.container Каталог продукции
+      div._content
+        include includes/catalog-cards
+        include includes/catalog-more
+      include includes/catalog-additional
+  include includes/contacts
+  include includes/footer
+

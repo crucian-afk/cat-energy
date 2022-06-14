@@ -1,0 +1,137 @@
+.main-nav {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  background-color: $white;
+  z-index: 900;
+
+  &--closed {
+    position: absolute;
+    transform: translateY(-500px);
+  }
+
+  &--float {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.main-nav__element {
+  text-transform: uppercase;
+  padding: 1em 0;
+  width: 100%;
+  border-top: 1px solid $special-grey-light;
+  text-align: center;
+
+  &:last-child {
+    border-bottom: 1px solid $special-grey-light;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .main-nav {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    max-width: 614px;
+    justify-content: flex-end;
+    font-size: 18px;
+    font-weight: 400;
+    flex-wrap: wrap;
+    z-index: 100;
+
+    &--closed {
+      position: inherit;
+    }
+
+    &--float {
+      position: inherit;
+    }
+  }
+
+  .main-nav__element {
+    font-size: 18px;
+    width: auto;
+    padding-left: 7px;
+    padding-right: 10px;
+    margin-right: 19px;
+    border: none;
+
+    &:last-child {
+      border: none;
+      margin: 0;
+    }
+  }
+
+  .main-nav__link {
+    text-decoration: none;
+    color: inherit;
+
+    &--active {
+      border-bottom: 2px solid $green;
+      padding-bottom: 5px;
+    }
+
+    &:visited {
+      color: $black;
+    }
+  }
+
+  .main-nav__element .main-nav__link {
+    color: $black;
+    border-color: $black;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav {
+    position: absolute;
+    background-color: transparent;
+    top: 50px;
+    left: 733px;
+  }
+
+  .main-nav__element {
+    font-size: 20px;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .main-nav__link {
+    color: $white;
+    border-color: $white;
+    transition: 0.2s;
+
+    &--active {
+      border-color: $green;
+    }
+
+    &:hover {
+      opacity: 0.6;
+      transition: 0.2s;
+    }
+
+    &:active {
+      opacity: 0.3;
+      transition: 0.2s;
+    }
+  }
+}
+
+@media (min-width: $desktop-width + 1) {
+  .main-nav {
+    right: 15%;
+  }
+}

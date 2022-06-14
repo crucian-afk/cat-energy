@@ -1,0 +1,22 @@
+div.additional.container
+  h2._title.title-strip Дополнительные товары
+  table.specs
+    thead.visually-hidden
+      tr
+        - const TABLE_HEADLINES = ["Название", "Количество", "Цена", ""]
+        each headline in TABLE_HEADLINES
+          td=headline
+    tbody
+      each val in ADDITIONALS
+        tr.specs__item
+          td.specs__name= val.name
+          if val.weight
+            td #{val.volume} (#{val.weight})
+          else
+            td= val.volume
+          td= val.price
+          td.specs__cta
+            button(type="button").button Заказать
+  div.gift
+    div._wrapper
+      p._text Закажите все<br> и получите чехол для<br> кота в подарок!

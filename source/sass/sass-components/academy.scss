@@ -1,0 +1,32 @@
+.academy {
+  font-family: "Arial", sans-serif;
+  font-size: 1em;
+  padding-top: 18px;
+}
+
+.academy__link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.academy__logo {
+  height: 34px;
+}
+
+@media (min-width: $tablet-width) {
+  .academy {
+    padding-top: 32px;
+    padding-left: 146px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .academy {
+    padding-top: 35px;
+    padding-left: 98px;
+  }
+
+  .academy__logo-image {
+    margin-right: 22px;
+  }
+}

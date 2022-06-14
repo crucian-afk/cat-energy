@@ -1,0 +1,45 @@
+.logo__link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo__image {
+  display: block;
+  margin-right: 57px;
+}
+
+@media (min-width: $tablet-width) {
+  .logo {
+    margin-left: 4px;
+    margin-top: 5px;
+  }
+
+  .logo__image {
+    margin-left: 8px;
+    margin-right: 0;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .logo__link {
+    width: 220px;
+    position: absolute;
+    top: 55px;
+    left: -7px;
+    justify-content: initial;
+  }
+
+  .logo__image--sign {
+    width: 120px;
+    margin-left: 11px;
+  }
+}

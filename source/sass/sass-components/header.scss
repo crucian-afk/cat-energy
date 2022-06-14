@@ -1,0 +1,25 @@
+.header {
+  padding-top: 14px;
+}
+
+.header__nav {
+  width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .header {
+    display: flex;
+    padding: 25px 45px;
+    justify-content: space-between;
+  }
+
+  .header.container {
+    padding: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .header.container {
+    padding: 0;
+  }
+}

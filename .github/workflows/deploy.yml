@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Project check
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16'
+
+    - uses: actions/checkout@master
+      name: Checkout
+
+    - name: Install dependencies 🚧
+      run: |
+        npm ci
+
+    - name: Build 🏗️
+      run: |
+        npm run build
+
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: build # The folder the action should deploy.

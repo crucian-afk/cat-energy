@@ -1,0 +1,18 @@
+.top-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+@media (min-width: $tablet-width) {
+  .top-menu {
+    z-index: 200;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .top-menu {
+    position: absolute;
+  }
+}

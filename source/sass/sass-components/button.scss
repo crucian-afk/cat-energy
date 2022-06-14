@@ -1,0 +1,30 @@
+.button {
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  display: block;
+  background-color: $green;
+  text-transform: uppercase;
+  color: $white;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  border: none;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $dark-green;
+    transition: 0.2s;
+  }
+
+  &:active {
+    color: transparentize($white, 0.3);
+  }
+}
+
+@media (min-width: $tablet-width) and (min-width: $desktop-width) {
+  .button {
+    font-size: 20px;
+  }
+}

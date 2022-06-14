@@ -1,0 +1,42 @@
+.additional__title {
+  font-size: 24px;
+  position: relative;
+  font-weight: 400;
+  margin-top: 42px;
+  margin-bottom: 27px;
+
+  &::after {
+    content: "";
+    width: 53px;
+    height: 2px;
+    background-color: $green;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .additional__title {
+    font-size: 36px;
+    margin-left: 37px;
+    margin-top: 46px;
+
+    &::after {
+      width: 326px;
+      right: -29px;
+      top: 30px;
+    }
+
+    &::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      position: absolute;
+      background-color: $green;
+      left: -67px;
+      top: 30px;
+    }
+  }
+}
+

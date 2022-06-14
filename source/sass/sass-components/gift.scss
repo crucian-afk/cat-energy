@@ -1,0 +1,77 @@
+.gift {
+  height: 290px;
+  background-image: url("../img/catalog-gift.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+@media (min-resolution: 2dppx) {
+  .gift {
+    background-image: url("../img/catalog-gift@2x.jpg");
+  }
+}
+
+.gift__wrapper {
+  height: 100%;
+}
+
+.gift__text {
+  color: $white;
+  font-family: "Arial", sans-serif;
+  font-size: 1em;
+  text-align: center;
+  max-width: 190px;
+  margin: 0 auto;
+  padding-top: 60px;
+  line-height: 20px;
+
+
+  &::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../img/catalog-gift-icon.svg");
+    margin: 0 auto 48px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .gift {
+    height: 200px;
+    background-position-y: 60%;
+    margin-bottom: 41px;
+  }
+
+  .gift__text {
+    margin-left: auto;
+    margin-right: 97px;
+    padding-top: 71px;
+    text-align: left;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: -341px;
+      top: 60px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .gift {
+    width: 245px;
+  }
+
+  .gift__text {
+    padding-top: 50%;
+    margin: 0;
+    text-align: center;
+
+    &::before {
+      left: 87px;
+      top: 14px;
+    }
+  }
+}

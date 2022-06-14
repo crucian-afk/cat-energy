@@ -1,0 +1,124 @@
+.example__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  margin: 10px auto 0;
+}
+
+.example__button {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.example__progress-bar {
+  height: 14px;
+  padding: 3px 5px;
+  border: 1px solid $special-grey;
+  background-color: $white;
+  border-radius: 10px;
+  width: 84px;
+}
+
+.example__progress-toggle {
+  width: 50%;
+  height: 6px;
+  border-radius: 10px;
+  background-color: $green;
+  transform: translateX(0);
+  transition: 0.3s;
+}
+
+.example--after .example__progress-toggle {
+  transform: translateX(100%);
+}
+
+.example__range {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .example__buttons {
+    width: 570px;
+    margin: 30px 10px 0 72px;
+  }
+
+  .example__button {
+    font-size: 20px;
+    padding: 4px 0;
+    border-bottom: 1px dotted $special-grey-range;
+    line-height: 20px;
+
+    &:hover {
+      border-bottom-style: solid;
+    }
+  }
+
+  .example__progress-bar {
+    width: 427px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    transform: translate(-1px, 8px);
+  }
+
+  .example__range {
+    display: block;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background-color: $range-bg;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .example__progress-toggle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -31px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid $range-grey;
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 0 $range-shadow;
+    background-color: $white;
+
+    &::before {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: 0;
+      left: 0;
+      background-color: $green;
+      z-index: 50;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .example__buttons {
+    margin: 0;
+    margin-left: 206px;
+    margin-top: 10px;
+  }
+
+  .example__progress-toggle {
+    margin-top: -25px;
+
+    &::before {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: 0;
+      left: 0;
+      background-color: $green;
+      z-index: 50;
+    }
+  }
+}

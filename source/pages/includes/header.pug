@@ -1,0 +1,18 @@
+header.header.container
+  div.top-menu
+    div.logo
+      a(href="/")._link
+        picture
+          source(media="(min-width: 1440px)" srcset="./img/logo-large.svg")
+          source(media="(min-width: 768px)" srcset="./img/logo-medium.svg")
+          img(src="./img/logo-small.svg" width="34" height="38" alt="Логотип")._image
+        img(src="./img/logo-title.svg" width="101" height="38" alt="Логотип-надпись")._image.-sign
+    button(type="button").burger-menu-button
+      span.visually-hidden Открыть меню
+      span(aria-hidden=true).burger-inner
+  nav._nav
+    ul.main-nav(class= location === "/" ? "main-nav--contrast":undefined)
+      each link in navLink
+        each text, href in link
+          li._element
+            a(href=href, aria-current = href === location ? "page" : undefined, class = href === location ? "main-nav__link--active":"main-nav__link" ).link=text

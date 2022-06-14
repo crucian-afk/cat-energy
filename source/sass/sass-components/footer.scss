@@ -1,0 +1,24 @@
+.footer {
+  background-color: $smoke-white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.footer__logo {
+  width: 128px;
+  height: auto;
+  display: block;
+  margin: 20px auto 30px;
+}
+
+@media (min-width: $tablet-width) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer__logo {
+    margin: 44px 110px 42px;
+  }
+}
